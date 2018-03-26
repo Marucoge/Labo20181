@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114062743834004046}
   - component: {fileID: 23031049425295398}
   - component: {fileID: 54407743282252030}
+  - component: {fileID: 65299401709493160}
   m_Layer: 0
   m_Name: KinematicPlate
   m_TagString: Untagged
@@ -36,8 +37,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1620590653449570}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,6 +101,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65299401709493160
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1620590653449570}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.19999997, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114062743834004046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd9970ed7a45e04f95dad1c88e1b933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CenterPosition: {x: 0, y: 0, z: 0}
+  CenterPosition: {x: 0, y: 0, z: 3}
   Speed: {x: 1, y: 1, z: 1}
   Scale: {x: 5, y: 0, z: 0}
   XDelays: 0
