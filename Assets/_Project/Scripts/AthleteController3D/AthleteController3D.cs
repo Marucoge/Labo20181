@@ -24,17 +24,20 @@ namespace Labo {
     public class AthleteController3D : MonoBehaviour {
         [SerializeField] private VirtualStick VirtualStickL;
         [SerializeField] private VirtualStick VirtualStickR;
+        [SerializeField] private GameObject face;
 
         public Vector3 TotalMovementPerSecond { get; private set; }
 
         private List<IMovementCalculator3D> calculators;
         private CharacterController character;
         private IGroundingDetector3D detector;
+        private CameraAngleCalculator3D cameraman;
 
 
         private void Start() {
             character = GetComponent<CharacterController>();
             detector = GetComponent<IGroundingDetector3D>();
+            cameraman = new CameraAngleCalculator3D(face, this.gameObject, VirtualStickR);
 
             // 移動量を計算するクラスをそれぞれここで登録する。
             calculators = new List<IMovementCalculator3D>();
@@ -45,6 +48,7 @@ namespace Labo {
 
         private void Update() {
             TotalMovementPerSecond = Vector3.zero;
+            cameraman.Rotate();     // タイミングは深く考えていない。
 
             // 移動量を計算するクラスでManualUpdate を呼び、計算した移動量を合計する。毎フレーム。
             foreach (IMovementCalculator3D element in calculators) {

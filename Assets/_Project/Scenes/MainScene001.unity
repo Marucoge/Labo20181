@@ -1081,6 +1081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VirtualStickL: {fileID: 122842114}
   VirtualStickR: {fileID: 584863549}
+  face: {fileID: 767223031}
 --- !u!1 &2093928311
 GameObject:
   m_ObjectHideFlags: 0
