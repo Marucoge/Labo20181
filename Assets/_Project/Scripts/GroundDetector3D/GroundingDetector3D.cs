@@ -31,6 +31,7 @@ namespace Labo{
         private int layermask = ~0;
 
 
+
         private void Start() {
             layermask = LayerMaskGenerator.Generate(IgnoreLayer.Specified, this.gameObject.layer);
             LogView.Log("Detector will ignore: [" + LayerMask.LayerToName(this.gameObject.layer) + "] layer.");
@@ -51,7 +52,7 @@ namespace Labo{
             Vector3 offsetToCastOrigin = Vector3.down * 0.2f;
             Vector3 castOrigin = caster.transform.position + offsetToCastOrigin;
             Vector3 castDirection = Vector3.down;
-            float castLength = 0.2f;
+            float castLength = 0.8f;
             float castRadius = 0.5f;
 
             var hitInfo = new RaycastHit();
