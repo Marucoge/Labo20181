@@ -33,6 +33,7 @@ namespace Labo{
 
         private void Start() {
             layermask = LayerMaskGenerator.Generate(IgnoreLayer.Specified, this.gameObject.layer);
+            LogView.Log("Detector will ignore: [" + LayerMask.LayerToName(this.gameObject.layer) + "] layer.");
         }
 
 
@@ -41,7 +42,8 @@ namespace Labo{
             IsGrounding = (HitInfo.collider != null);
             DetectedGround =
                 IsGrounding ? HitInfo.collider.gameObject : null;
-            // Debug.Log("Grounding: " + IsGrounding + " " + DetectedGround);
+            
+            LogView.Log("Grounding: " + IsGrounding + " on " + DetectedGround);
         }
 
 

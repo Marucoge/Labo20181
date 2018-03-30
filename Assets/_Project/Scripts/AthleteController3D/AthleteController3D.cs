@@ -32,12 +32,14 @@ namespace Labo {
         private CharacterController character;
         private IGroundingDetector3D detector;
         private CameraAngleCalculator3D cameraman;
+        private AdoptiveFriction frictioner;
 
 
         private void Start() {
             character = GetComponent<CharacterController>();
             detector = GetComponent<IGroundingDetector3D>();
             cameraman = new CameraAngleCalculator3D(face, this.gameObject, VirtualStickR);
+            frictioner = new AdoptiveFriction(this.gameObject, detector);
 
             // 移動量を計算するクラスをそれぞれここで登録する。
             calculators = new List<IMovementCalculator3D>();
@@ -48,7 +50,9 @@ namespace Labo {
 
         private void Update() {
             TotalMovementPerSecond = Vector3.zero;
+
             cameraman.Rotate();     // タイミングは深く考えていない。
+            frictioner.ManualUpdate();
 
             // 移動量を計算するクラスでManualUpdate を呼び、計算した移動量を合計する。毎フレーム。
             foreach (IMovementCalculator3D element in calculators) {
