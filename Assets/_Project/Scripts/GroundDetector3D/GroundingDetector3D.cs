@@ -38,7 +38,7 @@ namespace Labo {
 
         private readonly Vector3 offsetToCastOrigin = Vector3.down * 0.2f;
         private readonly Vector3 castDirection = Vector3.down;
-        private readonly float castLength = 0.8f;
+        private readonly float castLength = 0.6f;
         private readonly float castRadius = 0.5f;
 
 

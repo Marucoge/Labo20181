@@ -744,7 +744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9376814, b: 0.25098038, a: 0.63529414}
+  m_Color: {r: 1, g: 0.9376814, b: 0.25098038, a: 0.53333336}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1322,9 +1322,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsEnable: 1
-  Offset: {x: 0, y: 0, z: 0}
+  Offset: {x: 0, y: -0.2, z: 0}
   Radius: 0.5
-  Length: 10
+  Length: 0.6
 --- !u!114 &2072068431
 MonoBehaviour:
   m_ObjectHideFlags: 0
