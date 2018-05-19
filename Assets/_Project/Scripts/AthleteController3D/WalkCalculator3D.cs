@@ -11,7 +11,7 @@ namespace Labo{
     public class WalkCalculator3D : IMovementCalculator3D {
         public Vector3 MovementPerFrame { get; private set; }
         private GameObject walkerObject;
-        private float walkSpeed = 3f;
+        private float walkSpeed = 8f;
         private VirtualStick stickL;
 
         public WalkCalculator3D(GameObject walker, VirtualStick virtualStickL) {
