@@ -25,6 +25,7 @@ namespace Labo {
         [SerializeField] private VirtualStick VirtualStickL;
         [SerializeField] private VirtualStick VirtualStickR;
         [SerializeField] private GameObject face;
+        [SerializeField] private VirtualButton JumpButton;
 
         public Vector3 TotalMovementPerSecond { get; private set; }
 
@@ -33,7 +34,7 @@ namespace Labo {
         private IGroundingDetector3D detector;
         private CameraAngleCalculator3D cameraman;
         private AdoptiveFriction frictioner;
-
+        
 
         private void Start() {
             character = GetComponent<CharacterController>();
@@ -45,6 +46,7 @@ namespace Labo {
             calculators = new List<IMovementCalculator3D>();
             calculators.Add(new GravityCalculator3D(detector));
             calculators.Add(new WalkCalculator3D(this.gameObject, VirtualStickL));
+            calculators.Add(new JumpCalculator3D(detector, JumpButton));
         }
 
 
